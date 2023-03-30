@@ -1,5 +1,5 @@
 fun main() {
-  var get = given(listOf("girl","boy","cow","dog","cat","eat","cry","sit","sing","fly"))
+  val get = given(listOf("girl","boy","cow","dog","cat","eat","cry","sit","sing","fly"))
     println(get)
 
     val people =listOf(56.7,45.6,57.9,67.8,98.7,34.7)
@@ -10,27 +10,13 @@ fun main() {
 
     human()
 
-    val cars = listOf(
-            Car("KAZ236F", 3700.0),
-            Car("KBZ790D", 6000.0),
-            Car("KCD978G", 1500.0)
+    val avgmileage = listOf(
+            Car("KAZ236F", 3700),
+            Car("KBZ790D", 6000),
+            Car("KCD978G", 1500),
     )
-
-    val avgMileage = averageMileage(cars)
-    println("The average mileage of all vehicles is $avgMileage")
-
-
-
-
-
-//    var Subaru = Car("KCT 234R",234)
-//    var Vitz = Car("KCB 256T",134)
-//    var opel = Car("KCE 435Y",756)
-//    var cars = listOf(Subaru,Vitz,opel)
-////    var getav = getAverage(listOf(Subaru,Vitz,opel))
-//     println(getAverage(cars))
-////    println(getav)
-
+val averagemileage = getAverage(avgmileage)
+    println("the average mileage is $averagemileage")
 
 
 }
@@ -75,22 +61,14 @@ fun human() {
 //all the vehicles in the list.
 
 
-//data class Car (var Registration:String, var mileage:Int)
-//
-//fun getAverage (avgmileage:List<Car>): Double{
-//    var sum = 0.0
-//    avgmileage.forEach { car ->
-//        sum+=car.mileage
-//
-//
-//    }
-//    var avg = sum/avgmileage.count()
-//    return avg
-//
-//}
-data class Car(val registration: String, val mileage: Double)
+data class Car (var Registration:String, var mileage:Int)
 
-fun averageMileage(cars: List<Car>): Double {
-    val totalM = cars.sumByDouble { it.mileage }
-    return totalM / cars.size
+fun getAverage (avgmileage:List<Car>): Double{
+    var sum = 0.0
+   for (car in avgmileage){
+       sum += car.mileage
+   }
+return sum / avgmileage.size
 }
+
+
