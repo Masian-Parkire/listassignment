@@ -9,6 +9,8 @@ fun main() {
     println(people)
 
     human()
+    val allpeope = addPeople()
+    println(allpeope)
 
     val avgmileage = listOf(
             Car("KAZ236F", 3700),
@@ -53,6 +55,11 @@ fun human() {
 }
 //4 Given a list similar to the one above, write a function in which you will
 //create 2 more people objects and add them to the list at one go.
+fun addPeople():List <Person>{
+    val person4 = Person("Purity", 20, 145.5, 87.8)
+    val person5 = Person("Chep", 15, 160.8, 30.6)
+    return mutableListOf(person4,person5)
+}
 
 
 
